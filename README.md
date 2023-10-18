@@ -1,6 +1,6 @@
 # EventScape
 
-EventScape is a platform which let registered users to post and update events.
+EventScape is a platform which let registered users post and update events.
 Unregistered users can see all the events and their details.
 
 Home page: 
