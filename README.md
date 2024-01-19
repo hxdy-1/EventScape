@@ -6,7 +6,7 @@ Unregistered users can see all the events and their details.
 Will attach MongoDB soon...
 
 Home page: 
-![image](https://github.com/hxdy-1/EventScape/assets/115286446/f1683b8e-129c-450c-bd00-a86d58dbedbf)
+![image](https://github.com/hxdy-1/EventScape/assets/115286446/7da6b602-1bc7-4617-8b0d-6c971faa3122)
 
 All events page: 
 ![image](https://github.com/hxdy-1/EventScape/assets/115286446/efe3621d-665b-48d6-9114-1e386dfc6809)
