@@ -15,19 +15,33 @@
 	text-decoration: none;
 	display: inline-block;
 	color: var(--color-primary-400);
-	transition: all 300ms ease-in-out;
+	transition: all 200ms ease-in-out;
 }
 
 .list a:hover {
-	color: var(--color-primary-800);
+	/* color: var(--color-primary-800); */
+	/* color: var(--color-primary-100); */
+	color: white;
 }
 
 .list a.active {
 	color: var(--color-primary-800);
-	text-decoration: underline;
-	transform: scale(1.1);
+	color: white;
+	text-decoration: overline;
+	transform: scale(1.06);
 }
 
 .list button {
 	cursor: pointer;
+	border: none;
+	outline: none;
+	border-radius: 2px;
+	padding: 0.1rem 0.5rem;
+
+	transition: all 150ms ease-out;
+}
+
+.list button:hover {
+	background-color: var(--color-primary-300);
+	color: black;
 }

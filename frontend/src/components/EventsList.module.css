@@ -3,6 +3,10 @@
 	max-width: 40rem;
 }
 
+.events > h1 {
+	color: var(--color-primary-100);
+}
+
 .list {
 	display: flex;
 	flex-direction: column;
@@ -20,7 +24,7 @@
 }
 
 .item a:hover {
-	transform: scale(1.02);
+	transform: scale(1.01);
 	background-color: var(--color-gray-700);
 }
 

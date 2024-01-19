@@ -23,6 +23,15 @@
 	text-decoration: none;
 	font: inherit;
 	cursor: pointer;
+	border-radius: 4px;
+
+	transition: all 150ms ease-out;
+}
+
+.actions a:hover,
+.actions button:hover {
+	/* opacity: 0.7; */
+	background-color: var(--color-gray-700);
 }
 
 .actions button {

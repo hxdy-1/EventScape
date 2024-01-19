@@ -1,4 +1,11 @@
 .container img {
 	height: 30vh;
-	mix-blend-mode: hard-light;
+	mix-blend-mode: color-burn;
+
+	transition: all 200ms ease-out;
+	cursor: pointer;
+}
+
+.container img:hover {
+	mix-blend-mode: color-dodge;
 }
