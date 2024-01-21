@@ -11,7 +11,17 @@ import classes from "./EventForm.module.css";
 import { getAuthToken } from "../utils/auth";
 import { BASE_URL } from "../env";
 
-console.log(BASE_URL);
+// console.log(BASE_URL);
+
+function formatDate(dateString) {
+	const options = { day: "2-digit", month: "2-digit", year: "numeric" };
+	const [day, month, year] = new Date(dateString)
+		.toLocaleDateString("en-GB", options)
+		.split("/");
+
+	// return `${day}-${month}-${year}`;
+	return `${year}-${month}-${day}`;
+}
 
 function EventForm({ method, event }) {
 	const data = useActionData();
@@ -23,6 +33,8 @@ function EventForm({ method, event }) {
 	function cancelHandler() {
 		navigate("..");
 	}
+
+	// console.log("Event dot date: ", event.date);
 
 	return (
 		<Form method={method} className={classes.form}>
@@ -60,7 +72,7 @@ function EventForm({ method, event }) {
 					type="date"
 					name="date"
 					required
-					defaultValue={event ? event.date : ""}
+					defaultValue={event ? formatDate(event.date) : ""}
 				/>
 			</p>
 			<p>
@@ -94,6 +106,8 @@ export default EventForm;
 export async function action({ request, params }) {
 	const method = request.method;
 	const data = await request.formData();
+
+	// console.log("Data dot date: ", data.get("date"));
 
 	const eventData = {
 		title: data.get("title"),
