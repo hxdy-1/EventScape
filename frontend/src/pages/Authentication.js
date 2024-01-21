@@ -23,7 +23,6 @@ export const action = async ({ request }) => {
 		password: data.get("password"),
 	};
 
-	// const response = await fetch("http://localhost:8080/" + mode, {
 	const response = await fetch(BASE_URL + mode, {
 		method: "POST",
 		headers: {
