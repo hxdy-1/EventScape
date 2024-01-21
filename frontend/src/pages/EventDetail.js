@@ -11,7 +11,7 @@ import EventItem from "../components/EventItem";
 import EventsList from "../components/EventsList";
 import { getAuthToken } from "../utils/auth";
 import { BASE_URL } from "../env";
-console.log(BASE_URL);
+// console.log(BASE_URL);
 function EventDetailPage() {
 	const { event, events } = useRouteLoaderData("event-detail");
 
@@ -38,8 +38,6 @@ function EventDetailPage() {
 export default EventDetailPage;
 
 async function loadEvent(id) {
-	// const response = await fetch("http://localhost:8080/events/" + id);
-	// const response = await fetch(`${BASE_URL}events/` + id);
 	const response = await fetch(`${BASE_URL}events/${id}`);
 
 	if (!response.ok) {
@@ -56,7 +54,6 @@ async function loadEvent(id) {
 }
 
 async function loadEvents() {
-	// const response = await fetch("http://localhost:8080/events");
 	const response = await fetch(`${BASE_URL}events`);
 
 	if (!response.ok) {
@@ -78,6 +75,7 @@ async function loadEvents() {
 
 export async function loader({ request, params }) {
 	const id = params.eventId;
+	// console.log("id from loader: ", id);
 
 	return defer({
 		event: await loadEvent(id),
@@ -88,8 +86,7 @@ export async function loader({ request, params }) {
 export async function action({ params, request }) {
 	const eventId = params.eventId;
 	const token = getAuthToken();
-	// const response = await fetch("http://localhost:8080/events/" + eventId, {
-	// const response = await fetch(`${BASE_URL}events/` + eventId, {
+
 	const response = await fetch(`${BASE_URL}events/${eventId}`, {
 		method: request.method,
 		headers: {
