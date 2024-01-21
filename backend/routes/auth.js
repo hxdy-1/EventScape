@@ -7,6 +7,7 @@ const router = express.Router();
 
 router.post("/signup", async (req, res, next) => {
 	const data = req.body;
+	console.log(data);
 	let errors = {};
 
 	if (!isValidEmail(data.email)) {
@@ -14,6 +15,8 @@ router.post("/signup", async (req, res, next) => {
 	} else {
 		try {
 			const existingUser = await get(data.email);
+			// const existingUser = await Users.findOne(data.email);
+			console.log(existingUser);
 			if (existingUser) {
 				errors.email = "Email exists already.";
 			}
@@ -34,6 +37,7 @@ router.post("/signup", async (req, res, next) => {
 
 	try {
 		const createdUser = await add(data);
+		// const createdUser = await Users.create(data);
 		const authToken = createJSONToken(createdUser.email);
 		res.status(201).json({
 			message: "User created.",
@@ -52,11 +56,14 @@ router.post("/login", async (req, res) => {
 	let user;
 	try {
 		user = await get(email);
+		// user = await Users.findOne({ email });
+		console.log(user);
 	} catch (error) {
 		return res.status(401).json({ message: "Authentication failed." });
 	}
 
 	const pwIsValid = await isValidPassword(password, user.password);
+	console.log(pwIsValid);
 	if (!pwIsValid) {
 		return res.status(422).json({
 			message: "Invalid credentials.",

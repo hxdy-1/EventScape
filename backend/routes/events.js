@@ -14,6 +14,7 @@ router.get("/", async (req, res, next) => {
 	// console.log(req.token);
 	try {
 		const events = await getAll();
+		// const events = await Events.find();
 		res.json({ events: events });
 	} catch (error) {
 		next(error);
@@ -23,6 +24,7 @@ router.get("/", async (req, res, next) => {
 router.get("/:id", async (req, res, next) => {
 	try {
 		const event = await get(req.params.id);
+		// const event = await Events.findOne({ id: req.params.id });
 		res.json({ event: event });
 	} catch (error) {
 		next(error);
@@ -62,6 +64,7 @@ router.post("/", async (req, res, next) => {
 
 	try {
 		await add(data);
+		// await Events.create(data);
 		res.status(201).json({ message: "Event saved.", event: data });
 	} catch (error) {
 		next(error);
@@ -98,6 +101,7 @@ router.patch("/:id", async (req, res, next) => {
 
 	try {
 		await replace(req.params.id, data);
+		// await Events.findOneAndReplace({ id: req.params.id }, { data });
 		res.json({ message: "Event updated.", event: data });
 	} catch (error) {
 		next(error);
@@ -107,6 +111,7 @@ router.patch("/:id", async (req, res, next) => {
 router.delete("/:id", async (req, res, next) => {
 	try {
 		await remove(req.params.id);
+		// await Events.deleteOne({ id: req.params.id });
 		res.json({ message: "Event deleted." });
 	} catch (error) {
 		next(error);
