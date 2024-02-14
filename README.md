@@ -9,6 +9,7 @@ EventScape is a full-stack web application built with the MERN (MongoDB, Express
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
+- [Preview](#preview)
 
 ## Features
 
@@ -95,6 +96,8 @@ EventScape is a full-stack web application built with the MERN (MongoDB, Express
 ## Contributing
 
 Contributions are welcome! (want to add user and admin logins separately, as per now whoever login, is an admin)
+
+## Preview
 
 **Home page:**
 ![image](https://github.com/hxdy-1/EventScape/assets/115286446/7da6b602-1bc7-4617-8b0d-6c971faa3122)
